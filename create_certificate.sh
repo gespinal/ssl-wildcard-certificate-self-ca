@@ -57,7 +57,7 @@ openssl req \
  -new \
  -x509 \
  -sha256 \
- -days 365 \
+ -days 3650 \
  -keyout "${CERTS_DIR}/${DOMAIN}.key" \
  -out "${CERTS_DIR}/${DOMAIN}-CA.pem" \
  -subj "/C=DR/ST=SD/L=DR/O=${DOMAIN%.*}/OU=${DOMAIN%.*}/CN=*.${DOMAIN}/emailAddress=admin@${DOMAIN}"
@@ -78,7 +78,7 @@ sudo openssl x509 -req \
  -CAkey "${CERTS_DIR}/${DOMAIN}.key" \
  -CAcreateserial \
  -out "${CERTS_DIR}/${DOMAIN}-CERT.pem" \
- -days 365 \
+ -days 3650 \
  -sha256 \
  -extfile "${CERTS_DIR}/${DOMAIN}-csr.conf" \
  -extensions v3_req
